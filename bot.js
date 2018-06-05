@@ -77,7 +77,7 @@ bot.on("message", async message =>{
   if(message.member.nickname != "Anonymous"){
   message.member.setNickname("Anonymous");
   }
-  
+
   //if(message.author.bot) return; //if any bot use this function, do nothing
 
   let messageArray = message.content.split(" ");
@@ -103,23 +103,23 @@ bot.on("message", async message =>{
     bot.channels.get('452545819175026688').sendMessage({file:at[0].url});
     return 0;
   }
-  
+
   if(message.channel.id == 425691882346119189){
     //message.channel.send(message.content);
     message.channel.send(message.attachments.url);
     //message.delete();
   }
   if(!command.startsWith(prefix)) return;
-  
+
     if(command ===`${prefix}protect`){
     var m = args[0].slice(2, -1);
     adminCode(m,"This channel is affected by identity protection, every message hide their author name.");
     bot.channels.get(m).setTopic("Identity Protected")
   }
-  
-  
+
+
   //admin command
-  
+
   if(command === `${prefix}aspeak`){
     var m = args[0].slice(2, -1);
     var i;
@@ -130,7 +130,7 @@ bot.on("message", async message =>{
     }
     adminSpeak(m,res);
   }
-  
+
   if(command === `${prefix}acode`){
     var m = args[0].slice(2, -1);
     var i;
@@ -141,14 +141,14 @@ bot.on("message", async message =>{
     }
     adminCode(m,res);
   }
-  
+
   if(command === `${prefix}apic`){
     var m = args[0].slice(2, -1);
     adminPic(m,args[1]);
   }
 
   //user command
-  
+
   if(command === `${prefix}add`){
     if(args[0] == "server"){
     message.channel.sendCode('CSS',`ไม่สามารถสร้างChannelในหมวดServer`);
@@ -172,7 +172,8 @@ bot.on("message", async message =>{
   }
 
   if(command === `${prefix}move`){
-    moveChannel(message.guild,args[0],args[1]);
+    var parent = server.channels.find('name',args[1]).id;
+    moveChannel(message.guild,args[0],parent);
   }
 
 if(command === `${prefix}guideline`){
