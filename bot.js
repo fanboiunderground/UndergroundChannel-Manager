@@ -173,7 +173,7 @@ bot.on("message", async message =>{
 
 
   if(command === `${prefix}put`){
-    var parent = server.channels.find('name',args[1]).id;
+    var parent = message.guild.channels.find('name',args[1]).id;
     moveChannel(message.guild,args[0],parent);
     //moveChannel(message.guild,args[0],parent);
   }
