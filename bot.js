@@ -173,6 +173,10 @@ bot.on("message", async message =>{
 
 
   if(command === `${prefix}put`){
+    if(args[1] === `server`){
+      message.channel.sendCode('CSS',`ไม่สามารถย้ายเข้าหมวดserverได้`);
+      return 0;
+    }
     var parent = message.guild.channels.find('name',args[1]).id;
     moveChannel(message.guild,args[0],parent);
     //moveChannel(message.guild,args[0],parent);
