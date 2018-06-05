@@ -101,9 +101,9 @@ bot.on("message", async message =>{
     var at = (message.attachments).array();
     message.delete()
     message.channel.send(m);
+    bot.channels.get(anonCID).sendMessage(`${auth} => ${chan}\n: ${m}`);
     message.channel.send({file:at[0].url});
-    bot.channels.get(modCID).sendMessage(`${auth} => ${chan}\n: ${m}`);
-    bot.channels.get(modCID).sendMessage({file:at[0].url});
+    bot.channels.get(anonCID).sendMessage({file:at[0].url});
     return 0;
   }
 
@@ -122,7 +122,7 @@ bot.on("message", async message =>{
 
 
   //admin command
-  if(command === `${prefix}aspeak` && message.channel.id == 425691882346119189){
+  if(command === `${prefix}aspeak` && message.channel.id == modCID){
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -134,7 +134,7 @@ bot.on("message", async message =>{
   }
 
 
-  if(command === `${prefix}acode` && message.channel.id == 425691882346119189){
+  if(command === `${prefix}acode` && message.channel.id == modCID){
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -145,7 +145,7 @@ bot.on("message", async message =>{
     adminCode(m,res);
   }
 
-  if(command === `${prefix}apic` && message.channel.id == 425691882346119189){
+  if(command === `${prefix}apic` && message.channel.id == modCID){
     var m = args[0].slice(2, -1);
     adminPic(m,args[1]);
   }
@@ -198,7 +198,7 @@ group password: pizza
 }
 
   if(command === `${prefix}delete`){
-    bot.channels.get('425691882346119189').sendMessage(`${bot.users.get('246302771953926144')} \n${message.author} ต้องการdelete ${args[0]} -> ${args[1]} เหตุผลเพราะว่า ${args[2]}`);
+    bot.channels.get(modCID).sendMessage(`${bot.users.get('246302771953926144')} \n${message.author} ต้องการdelete ${args[0]} -> ${args[1]} เหตุผลเพราะว่า ${args[2]}`);
   }
 
   if(command === `${prefix}help`){
