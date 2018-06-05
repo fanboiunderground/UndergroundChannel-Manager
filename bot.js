@@ -119,12 +119,7 @@ bot.on("message", async message =>{
 
 
   //admin command
-
-<<<<<<< HEAD
-  if(command === `${prefix}aspeak`){
-=======
   if(command === `${prefix}aspeak` && message.channel.id == 425691882346119189){
->>>>>>> glitch
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -135,11 +130,8 @@ bot.on("message", async message =>{
     adminSpeak(m,res);
   }
 
-<<<<<<< HEAD
-  if(command === `${prefix}acode`){
-=======
+
   if(command === `${prefix}acode` && message.channel.id == 425691882346119189){
->>>>>>> glitch
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -150,11 +142,7 @@ bot.on("message", async message =>{
     adminCode(m,res);
   }
 
-<<<<<<< HEAD
-  if(command === `${prefix}apic`){
-=======
   if(command === `${prefix}apic` && message.channel.id == 425691882346119189){
->>>>>>> glitch
     var m = args[0].slice(2, -1);
     adminPic(m,args[1]);
   }
@@ -183,15 +171,11 @@ bot.on("message", async message =>{
     message.reply(`Channel set "${args[0]}"`);
   }
 
-<<<<<<< HEAD
-  if(command === `${prefix}move`){
+
+  if(command === `${prefix}put`){
     var parent = server.channels.find('name',args[1]).id;
     moveChannel(message.guild,args[0],parent);
-=======
-  if(command === `${prefix}put`){
-    message.channel.send("helo");
     //moveChannel(message.guild,args[0],parent);
->>>>>>> glitch
   }
 
 if(command === `${prefix}guideline`){
