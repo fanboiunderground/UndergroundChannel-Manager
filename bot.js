@@ -3,9 +3,6 @@ const speaker = require("./speaker.json")
 const Discord = require('discord.js');
 var format = /[!@#$%^&*()+\=\[\]{};':"\\|,.<>\/?]+/;
 const prefix = botSetting.prefix
-const modCID = botSetting.moderationCID
-const anonCID = botSetting.anonlogCID
-const adminID = botSetting.adminID
 
 const bot = new Discord.Client();
 
@@ -102,8 +99,8 @@ bot.on("message", async message =>{
     message.delete()
     message.channel.send(m);
     message.channel.send({file:at[0].url});
-    bot.channels.get(modCID).sendMessage(`${auth} => ${chan}\n: ${m}`);
-    bot.channels.get(modCID).sendMessage({file:at[0].url});
+    bot.channels.get('452545819175026688').sendMessage(`${auth} => ${chan}\n: ${m}`);
+    bot.channels.get('452545819175026688').sendMessage({file:at[0].url});
     return 0;
   }
 
