@@ -120,6 +120,7 @@ bot.on("message", async message =>{
 
   //admin command
 
+
   if(command === `${prefix}aspeak` && message.channel.id == 425691882346119189){
     var m = args[0].slice(2, -1);
     var i;
@@ -131,7 +132,9 @@ bot.on("message", async message =>{
     adminSpeak(m,res);
   }
 
+
   if(command === `${prefix}acode` && message.channel.id == 425691882346119189){
+
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -141,6 +144,7 @@ bot.on("message", async message =>{
     }
     adminCode(m,res);
   }
+
 
   if(command === `${prefix}apic` && message.channel.id == 425691882346119189){
     var m = args[0].slice(2, -1);
@@ -170,6 +174,7 @@ bot.on("message", async message =>{
     speaker.cid = args[0];
     message.reply(`Channel set "${args[0]}"`);
   }
+
 
   if(command === `${prefix}put`){
     message.channel.send("helo");
