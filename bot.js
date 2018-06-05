@@ -120,7 +120,7 @@ bot.on("message", async message =>{
 
   //admin command
 
-  if(command === `${prefix}aspeak`){
+  if(command === `${prefix}aspeak` && message.channel.id == 425691882346119189){
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -131,7 +131,7 @@ bot.on("message", async message =>{
     adminSpeak(m,res);
   }
 
-  if(command === `${prefix}acode`){
+  if(command === `${prefix}acode` && message.channel.id == 425691882346119189){
     var m = args[0].slice(2, -1);
     var i;
     var res = "";
@@ -142,7 +142,7 @@ bot.on("message", async message =>{
     adminCode(m,res);
   }
 
-  if(command === `${prefix}apic`){
+  if(command === `${prefix}apic` && message.channel.id == 425691882346119189){
     var m = args[0].slice(2, -1);
     adminPic(m,args[1]);
   }
